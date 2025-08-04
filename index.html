@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpaglu - Just one paglu doing his thing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', Georgia, serif;
+            background-color: #ffda79;
+            color: #40407a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .logo {
+            width: 360px;
+            height: auto;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 8px 16px rgba(64, 64, 122, 0.15));
+            transition: all 0.3s ease;
+            animation: logoFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 10px 20px rgba(64, 64, 122, 0.2));
+        }
+
+        .tagline {
+            font-size: 1.75rem;
+            line-height: 1.8;
+            font-weight: 300;
+            color: #40407a;
+            letter-spacing: 0.02em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tagline strong {
+            font-weight: 700;
+        }
+
+        .contact {
+            margin-top: auto;
+            padding-top: 60px;
+        }
+
+        .contact-link {
+            color: #40407a;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 14px 32px;
+            border: 2px solid #40407a;
+            border-radius: 50px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #40407a;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .contact-link:hover {
+            color: #ffda79;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(64, 64, 122, 0.3);
+        }
+
+        .contact-link:hover::before {
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 30px 20px;
+            }
+
+            .logo {
+                width: 280px;
+                margin-bottom: 30px;
+            }
+
+            .tagline {
+                font-size: 1.4rem;
+                line-height: 1.7;
+            }
+
+            .contact-link {
+                font-size: 1rem;
+                padding: 12px 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 240px;
+                margin-bottom: 25px;
+            }
+
+            .tagline {
+                font-size: 1.25rem;
+                line-height: 1.6;
+            }
+
+            .contact {
+                padding-top: 50px;
+            }
+
+            .contact-link {
+                font-size: 0.95rem;
+                padding: 10px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <img src="webpaglu.png" alt="webpaglu" class="logo">
+        <p class="tagline">
+            Not a team (yet). Not a startup (yet).<br>
+            Just one <strong>paglu</strong> doing his thing.
+        </p>
+    </div>
+    
+    <div class="contact">
+        <a href="mailto:ndgandhi.88@gmail.com" class="contact-link">Get in touch</a>
+    </div>
+</body>
+</html>
